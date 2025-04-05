@@ -13,4 +13,7 @@ export class SidebarComponent implements OnInit {
     ngOnInit(): void {
         this.userData = this._UsersService.retriveUserData();
     }
+    logout() {
+        this._UsersService.logout();
+    }
 }

@@ -20,6 +20,10 @@ const routes: Routes = [
         component: AddUpdateUserComponent 
     },
     { 
+        path: "update/:id", 
+        component: AddUpdateUserComponent 
+    },
+    { 
         path: "profile", 
         component: ProfileComponent,
     },

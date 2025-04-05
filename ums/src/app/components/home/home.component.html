@@ -5,8 +5,12 @@
                 <app-sidebar></app-sidebar>
             </div>
             <div class="col-10 p-0">
-                <app-navbar></app-navbar>
-                <router-outlet></router-outlet>
+                <div class="d-flex flex-column">
+                    <app-navbar></app-navbar>
+                    <div style="height: calc(100vh - 60px);">
+                        <router-outlet></router-outlet>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

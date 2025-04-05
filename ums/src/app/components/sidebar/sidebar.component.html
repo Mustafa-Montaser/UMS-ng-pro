@@ -1,7 +1,7 @@
-<section>
-    <div class="content">
+<section class="position-relative">
+    <div class="content ">
         <h5 class="ms-3">UMS</h5>
-        <div class="mt-3">
+        <div class="mt-3 ">
             <div class="d-flex justify-content-center">
                 <img [src]="userData?.image" alt="" class="w-50">
             </div>
@@ -24,12 +24,25 @@
                         [routerLinkActiveOptions]="{ exact: true }"
                     >
                         <span class="d-inline-block w-50 text-nowrap text-start">
-                            <span class="d-inline-block me-3"><i [class]="li.icon"></i></span>
+                            <span class="d-inline-block me-0" style="width: 30px;"><i [class]="li.icon"></i></span>
                             <span>{{ li.name }}</span>
                         </span>
                     </a>
                 </li>
+                <li class="position-absolute bottom-0 mb-5 rounded logout">
+                    <a  
+                        class="text-decoration-none text-black w-100 d-inline-block rounded px-5 py-2"
+                        routerLink="/login"
+                        (click)="logout()"
+                    >
+                        <span class="d-flex align-items-center">
+                            <span class="d-inline-block me-3">Logout</span>
+                            <mat-icon>logout</mat-icon>
+                        </span>
+                    </a>
+                </li>
             </ul>
+
         </div>
     </div>
 </section>

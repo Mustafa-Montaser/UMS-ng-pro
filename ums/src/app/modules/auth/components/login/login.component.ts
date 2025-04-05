@@ -35,10 +35,8 @@ export class LoginComponent {
     isPassHidden: boolean = true;
 
     submitFormData(formData: FormGroup) {
-        console.log(formData);
         this._AuthService.onLogin(formData.value as UserFormData).subscribe({
             next: (res) => {
-                console.log(res);
                 localStorage.setItem("umsToken", res["accessToken"]);
             },
             error: (e) => {
@@ -51,19 +49,4 @@ export class LoginComponent {
         });
     }
 
-
-
-
-
-
-
-
-
-
-
-
-    beb(beb: any) {
-        console.log(beb.value);
-        
-    }
 }
