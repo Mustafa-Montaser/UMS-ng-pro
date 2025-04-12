@@ -44,12 +44,11 @@ export class UsersListComponent implements OnInit, AfterViewInit {
                 this.dataSource.data = this.userslistData.users;
             }
         });
-
-        this.trackQuery();
     }
-
+    
     ngAfterViewInit() {
         this.dataSource.paginator = this.paginator;
+        this.trackQuery();
     }
     // ========================================================
     

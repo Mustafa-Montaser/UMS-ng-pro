@@ -29,11 +29,11 @@ export class UsersService {
     }
 
     getUsersList(): Observable<Userslist> {
-        return this._HttpClient.get<Userslist>('https://dummyjson.com/users');
+        return this._HttpClient.get<Userslist>('users');
     }
 
     getUserProfileData(): Observable<any> {
-        return this._HttpClient.get("https://dummyjson.com/user/me", {
+        return this._HttpClient.get("user/me", {
             headers: { 
                 Authorization: `Bearer ${localStorage.getItem("umsToken")}` 
             }
@@ -41,23 +41,23 @@ export class UsersService {
     }
 
     deleteUserItem(id: number): Observable<any> {
-        return this._HttpClient.delete(`https://dummyjson.com/users/${id}`);
+        return this._HttpClient.delete(`users/${id}`);
     }
     
     searchUserByName(queryName: string): Observable<any> {
-        return this._HttpClient.get(`https://dummyjson.com/users/search?q=${queryName}`);
+        return this._HttpClient.get(`users/search?q=${queryName}`);
     }
     
     addNewUser(data: UserProfile): Observable<any>  {
-        return this._HttpClient.post('https://dummyjson.com/users/add', data);
+        return this._HttpClient.post('users/add', data);
     }
     
     getSingleUser(id: number): Observable<any> {
-        return this._HttpClient.get(`https://dummyjson.com/users/${id}`);
+        return this._HttpClient.get(`users/${id}`);
     }
     
     updateUserData(data: UserProfile, id: number): Observable<any> {
-        return this._HttpClient.put(`https://dummyjson.com/users/${id}`, data);
+        return this._HttpClient.put(`users/${id}`, data);
     }
 
     logout() {
