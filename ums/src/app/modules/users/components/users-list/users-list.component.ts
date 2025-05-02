@@ -74,7 +74,7 @@ export class UsersListComponent implements OnInit, AfterViewInit {
 
     trackQuery() {
         this._UsersService.queryUpdate$.subscribe((data) => {
-            if((data !== null) && (data !== "")) {
+            if(data !== null) {
                 this._UsersService.searchUserByName(data).subscribe({
                     next: (res) => {
                         this.userslistData = res;
